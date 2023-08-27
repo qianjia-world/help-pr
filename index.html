@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        const apiUrl = 'https://logistics-stage.ecpay.com.tw/Express/map';
+        const postData = {
+        // 在这里添加您需要发送的参数，格式类似于 'paramName': 'paramValue'
+        // 例如：'param1': 'value1',
+        //       'param2': 'value2'
+        };
+
+        const config = {
+        headers: {
+            'Accept': 'text/html',
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+        };
+
+        axios.post(apiUrl, {}, config)
+        .then(response => {
+            console.log('Response:', response.data);
+            // 在这里处理返回的数据
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            // 在这里处理错误
+        });
+
+    </script>
+    
+</body>
+</html>
